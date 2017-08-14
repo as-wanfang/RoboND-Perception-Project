@@ -19,9 +19,9 @@
 
 [image1]: ./Figure_1.png
 [image2]: ./Figure_2.png
-[image3]: ./FIgure_3.png
-[image4]: ./FIgure_4.png
-[image5]: ./FIgure_5.png
+[image3]: ./Figure_3.png
+[image4]: ./Figure_4.png
+[image5]: ./Figure_5.png
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/1067/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -40,8 +40,10 @@ This point is addressed in the pcl_callback function in project_template.py. I u
 #### 2. Complete Exercise 2 steps: Pipeline including clustering for segmentation implemented.
 This point is addressed in the pcl_callback function in project_template.py. The Euclidean clustering method is used to detect and extract point cloud for each object.
 
-
+Cloud points before filtering:
 ![Cloud points before filtering][image1]
+
+Cloud points after filtering and clustering:
 ![Cloud points after filtering and clustering][image2]
 
 #### 3. Complete Exercise 3 Steps.  Features extracted and SVM trained.  Object recognition implemented.
@@ -49,6 +51,7 @@ Feature extraction for training is addressed by features.py and capture_features
 
 SVM model training is addressed by train_svm.py. Linear kernal is used for the training and the penalty parameter is set to the default value of 1, which can be further tuned to decrease overfitting. The training result is shown in the figure below.
 
+Normalized confusion matrix:
 ![Normalized confusion matrix][image3]
 
 
@@ -57,8 +60,11 @@ SVM model training is addressed by train_svm.py. Linear kernal is used for the t
 #### 1. For all three tabletop setups (`test*.world`), perform object recognition, then read in respective pick list (`pick_list_*.yaml`). Next construct the messages that would comprise a valid `PickPlace` request output them to `.yaml` format.
 The parameters for PickPlace request are save to output_1.yaml, output_2.yaml and output_3.yaml for pick list 1, 2 and 3 respectively. The position of pick pose is specified by the centroid of the object cloud point. The position of place pose is specified by the position of the drop box with modified x-axis value so that the object will not stack in the drop box. The z-axis value is also set to 0.9 which is above the table.
 
+Pict list 1:
 ![Pict list 1][image2]
 
+Pict list 2:
 ![Pict list 2][image4]
 
+Pict list 3:
 ![Pict list 3][image5]
